@@ -488,5 +488,5 @@ Completed working full-stack AI skill assessment prototype with FastAPI backend,
 
 ## Author
 
-**Harshith Kumar**  
+**Harshith**  
 
