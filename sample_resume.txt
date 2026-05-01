@@ -1,0 +1,20 @@
+Sarah Chen
+Product-minded Full-Stack Engineer
+
+Summary
+Engineer focused on internal tools and AI-assisted workflows with strong backend and product collaboration experience.
+
+Experience
+- Built internal AI copilots and workflow tools using Python, FastAPI, React, Tailwind CSS, SQLite, and Docker
+- Built AWS-hosted workflows and internal AI copilots using Python, FastAPI, React, Tailwind CSS, SQLite, Docker, and CI/CD pipelines
+- Implemented prompt engineering patterns, RAG workflows, and structured output validation for GPT-based features used by support and operations teams
+- Designed REST APIs, background jobs, SQL analytics flows, and product dashboards
+- Led a migration from spreadsheets to a web platform, improving turnaround time by 38% through strong problem solving
+- Collaborated with design and GTM teams, wrote release documentation, and ran sprint demos with clear communication
+- Worked with PostgreSQL for reporting, added pytest coverage for critical paths, and made system design trade-offs for scale and simplicity
+
+Strengths
+- Full-stack delivery
+- Product thinking
+- Communication with stakeholders
+- Rapid prototyping

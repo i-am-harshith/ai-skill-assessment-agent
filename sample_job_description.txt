@@ -1,0 +1,29 @@
+Senior AI Product Engineer
+Company: Northstar Labs
+
+We are hiring an engineer to build AI-powered internal products and customer-facing workflows.
+
+Must-have skills:
+- Strong Python
+- FastAPI
+- SQL
+- React
+- Tailwind CSS
+- REST API design
+- Docker
+- LLM integration experience, especially OpenAI or similar APIs
+- Prompt engineering
+- Retrieval-augmented generation (RAG)
+- Production debugging
+
+Required supporting skills:
+- AWS
+- CI/CD
+- Testing
+- Cross-functional communication
+
+Nice to have:
+- PostgreSQL
+- System design
+- Analytics
+- Zero-to-one product delivery

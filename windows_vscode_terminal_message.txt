@@ -1,0 +1,23 @@
+Send this to your friend:
+
+1. Install Python 3.11+ from https://www.python.org/downloads/windows/
+2. Install Node.js LTS from https://nodejs.org/
+3. Extract the zip file anywhere on your Windows machine.
+4. Open the extracted folder in VS Code.
+5. Open the VS Code terminal inside that folder.
+6. Paste this command and press Enter:
+
+.\start_demo_windows.bat
+
+What happens next:
+- backend dependencies will install
+- frontend dependencies will install
+- backend server will start
+- frontend server will start
+- browser will open automatically at http://localhost:5173
+
+If the browser opens before the app is fully ready, wait a few seconds and refresh once.
+
+If Windows blocks the script:
+- right click start_demo_windows.bat
+- choose Run anyway or More info > Run anyway
