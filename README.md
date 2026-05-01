@@ -1,32 +1,165 @@
-# AI-Powered Skill Assessment & Personalised Learning Plan Agent
+# AI-Powered Skill Assessment & Personalized Learning Plan Agent
 
-An offline-first full-stack hackathon prototype that compares a job description against a candidate resume, generates an explainable skill gap analysis, runs a conversational assessment, scores proficiency, and creates a personalised learning plan with resource links and estimated time.
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![React](https://img.shields.io/badge/React-Frontend-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-UI-blue)
+![SQLite](https://img.shields.io/badge/SQLite-Database-lightgrey)
+![License](https://img.shields.io/badge/License-MIT-brightgreen)
+
+A full-stack AI skill assessment platform that compares a job description against a candidate resume, identifies skill gaps, generates assessment questions, scores candidate proficiency, and creates a personalized learning plan.
+
+This project is designed as an **AI/ML portfolio project** demonstrating resume analysis, skill extraction, explainable scoring, assessment generation, and full-stack AI application development using **FastAPI, React, TypeScript, SQLite, and an offline-first AI workflow**.
+
+---
+
+## Problem Statement
+
+Candidates often struggle to understand how well their resume matches a job description and which skills they need to improve before applying. Manual resume review and skill-gap analysis can be time-consuming, inconsistent, and difficult to personalize.
+
+This project solves that problem by providing an AI-powered workflow that:
+
+- Compares a resume against a target job description
+- Extracts matching and missing skills
+- Generates assessment questions for important skills
+- Scores candidate answers using explainable logic
+- Calculates readiness and skill proficiency
+- Creates a personalized learning plan with estimated improvement time
+
+---
+
+## Project Overview
+
+The **AI-Powered Skill Assessment & Personalized Learning Plan Agent** is an offline-first full-stack prototype built for hackathon/demo use.
+
+The application allows users to upload or paste a job description and resume, analyzes skill alignment, generates a conversational assessment, evaluates answers, and produces a final readiness report.
+
+The app works without OpenAI credentials by default using a mock LLM service. Optional OpenAI integration is isolated behind a replaceable service layer.
+
+---
 
 ## What It Does
 
 - Upload or paste a job description
 - Upload or paste a resume in `PDF`, `DOCX`, or `TXT`
-- Extract required skills from the JD
+- Extract required skills from the job description
 - Extract claimed skills from the resume
-- Compare overlap and missing skills
-- Generate assessment questions for important skills
-- Score candidate answers with explainable logic
-- Compute final skill proficiency using:
+- Compare matching and missing skills
+- Generate assessment questions for key skill gaps
+- Score candidate answers using explainable scoring logic
+- Compute skill proficiency using resume evidence and assessment performance
+- Prioritize skill gaps
+- Generate a personalized learning plan
+- Provide estimated learning time and curated resource links
+- Export the final report as a PDF from the frontend
+
+---
+
+## Key Features
+
+- Resume and job description parsing
+- Skill extraction from unstructured text
+- Skill gap analysis
+- Conversational assessment workflow
+- Explainable answer scoring
+- Final readiness score calculation
+- Personalized learning plan generation
+- Seeded demo sessions for quick walkthrough
+- Offline-first AI workflow
+- Optional OpenAI-backed service layer
+- PDF report export from frontend
+- Full-stack architecture with FastAPI and React
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Backend | FastAPI, SQLAlchemy, Pydantic |
+| Frontend | React, Vite, TypeScript, Tailwind CSS |
+| Database | SQLite |
+| Parsing | PDF, DOCX, TXT, Plain Text |
+| AI Layer | Offline Mock LLM, Optional OpenAI Integration |
+| Reporting | Browser-based PDF Export |
+| Runtime | Python 3.11, Node.js LTS |
+
+---
+
+## Recommended Python Version
+
+This project is tested with:
+
+```text
+Python 3.11
+```
+
+Using Python 3.11 is recommended for smooth backend setup and dependency compatibility.
+
+---
+
+## Key AI/ML Concepts Demonstrated
+
+- Resume-to-job-description matching
+- Skill extraction from unstructured text
+- Skill gap analysis
+- Rule-based and LLM-assisted assessment generation
+- Explainable scoring logic
+- Weighted proficiency scoring
+- Personalized learning path generation
+- Offline-first AI workflow
+- Optional OpenAI-based generation workflow
+- Full-stack AI application architecture using FastAPI and React
+
+---
+
+## What I Built
+
+- Built a full-stack AI skill assessment workflow using FastAPI and React
+- Implemented resume and job description parsing for PDF, DOCX, TXT, and plain text inputs
+- Added skill extraction and skill-gap comparison logic
+- Built assessment question generation and answer scoring workflow
+- Designed final readiness scoring using resume match and assessment performance
+- Generated personalized learning plans with estimated improvement time
+- Added seed data for demo-ready sessions
+- Added PDF export support from the frontend
+- Structured the project with backend, frontend, documentation, scoring logic, and architecture files
+- Prepared the project for GitHub portfolio presentation
+
+---
+
+## Scoring Model
+
+The system calculates skill proficiency using a weighted scoring approach:
 
 ```text
 Final Skill Score = 40% Resume Match + 60% Assessment Score
 ```
 
-- Prioritise skill gaps
-- Generate a personalised learning plan with curated resources and estimated hours
-- Export the final report as PDF from the frontend
+### Resume Match Score
 
-## Tech Stack
+The resume match score is calculated from detected resume evidence for required job-description skills.
 
-- Backend: `FastAPI`, `SQLAlchemy`, `SQLite`
-- Frontend: `React`, `Vite`, `Tailwind CSS`, `TypeScript`
-- Storage: `SQLite`
-- AI layer: Offline mock LLM by default, optional OpenAI-backed implementation via `.env`
+### Assessment Score
+
+The assessment score is calculated from the candidate's answers and rewards:
+
+- Technical depth
+- Implementation detail
+- Clear explanation
+- Measurable outcomes
+- Practical understanding
+
+### Gap Priority
+
+Skill gap priority increases when:
+
+- The skill is highly important in the job description
+- The candidate has a low final skill score for that skill
+
+See [`scoring_logic.md`](./scoring_logic.md) for the full breakdown.
+
+---
 
 ## Architecture
 
@@ -44,18 +177,61 @@ flowchart LR
     G --> B
 ```
 
+---
+
 ## Main Pages
 
 1. Home
-2. Upload/Input Job Description
-3. Upload/Input Resume
+2. Upload / Input Job Description
+3. Upload / Input Resume
 4. Skill Gap Analysis
 5. Conversational Assessment
-6. Final Report
+6. Final Report and Learning Plan
+
+---
 
 ## Screenshots
 
-![Job description workflow](docs/images/job-description-side-by-side.png)
+### Job Description Workflow
+
+![Job Description Workflow](docs/images/job-description-side-by-side.png)
+
+> Add more screenshots inside `docs/images/` and update this section as needed.
+
+Recommended screenshot files:
+
+```text
+docs/images/home.png
+docs/images/job-description.png
+docs/images/resume-upload.png
+docs/images/skill-gap-analysis.png
+docs/images/assessment.png
+docs/images/final-report.png
+```
+
+Recommended README format after adding more screenshots:
+
+```markdown
+### Home Page
+![Home Page](docs/images/home.png)
+
+### Job Description Input
+![Job Description Input](docs/images/job-description.png)
+
+### Resume Upload
+![Resume Upload](docs/images/resume-upload.png)
+
+### Skill Gap Analysis
+![Skill Gap Analysis](docs/images/skill-gap-analysis.png)
+
+### Conversational Assessment
+![Assessment](docs/images/assessment.png)
+
+### Final Report
+![Final Report](docs/images/final-report.png)
+```
+
+---
 
 ## Demo-Ready Seed Data
 
@@ -71,12 +247,21 @@ Seeded roles include:
 - `Data Analyst`
 - `Frontend Engineer`
 
-The fastest demo path is opening `Seeded Demo Session` from the home page.
+The fastest demo path is opening:
+
+```text
+Seeded Demo Session
+```
+
+from the home page.
+
+---
 
 ## Project Structure
 
 ```text
 ai-skill-assessment-agent/
+│
 ├── backend/
 │   ├── app/
 │   │   ├── api/
@@ -86,189 +271,250 @@ ai-skill-assessment-agent/
 │   │   ├── schemas/
 │   │   ├── services/
 │   │   └── utils/
-│   ├── .env
 │   ├── .env.example
 │   └── requirements.txt
+│
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── lib/
 │   │   ├── pages/
 │   │   └── types/
-│   ├── .env
 │   ├── .env.example
 │   └── package.json
+│
+├── docs/
+│   └── images/
+│
 ├── architecture.md
 ├── scoring_logic.md
 ├── demo_script.md
 ├── sample_job_description.txt
 ├── sample_resume.txt
-└── Makefile
+├── Makefile
+├── README.md
+└── .gitignore
 ```
+
+---
 
 ## Local Setup
 
-### Backend setup
+This project has two parts:
+
+- Backend: FastAPI
+- Frontend: React + Vite
+
+Run them in two separate terminals.
+
+---
+
+### Backend Setup
 
 ```bash
-cd "/Users/harshithkumarmv/Desktop/ai-skill-assessment-agent/backend"
+cd backend
 python3.11 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
 
 Backend runs at:
 
-- API: [http://localhost:8000/api](http://localhost:8000/api)
-- Swagger docs: [http://localhost:8000/docs](http://localhost:8000/docs)
+```text
+http://localhost:8000
+```
 
-### Frontend setup
+API docs:
+
+```text
+http://localhost:8000/docs
+```
+
+Health check:
+
+```text
+http://localhost:8000/api/health
+```
+
+---
+
+### Frontend Setup
+
+Open a second terminal:
 
 ```bash
-cd "/Users/harshithkumarmv/Desktop/ai-skill-assessment-agent/frontend"
+cd frontend
 npm install
 npm run dev
 ```
 
 Frontend runs at:
 
-- App: [http://localhost:5173](http://localhost:5173)
+```text
+http://localhost:5173
+```
+
+---
 
 ## Windows Quick Start
 
-If you share this project with a Windows user:
+If sharing this project with a Windows user:
 
 1. Zip the full project folder
-2. Send the zip file
-3. Ask them to extract it anywhere, for example on the Desktop
-4. Ask them to install:
+2. Ask them to extract it anywhere, such as Desktop
+3. Ask them to install:
    - Python `3.11+`
    - Node.js `LTS`
-5. Then they can run:
+4. Run:
 
 ```bat
 start_demo_windows.bat
 ```
 
-This launcher:
+The Windows launcher:
 
-- creates the backend virtual environment if needed
-- installs backend dependencies
-- installs frontend dependencies if needed
-- starts backend and frontend in separate windows
-- opens the browser automatically
+- Creates the backend virtual environment if needed
+- Installs backend dependencies
+- Installs frontend dependencies if needed
+- Starts backend and frontend in separate windows
+- Opens the browser automatically
 
 Windows launcher file:
 
-- [start_demo_windows.bat](./start_demo_windows.bat)
+[`start_demo_windows.bat`](./start_demo_windows.bat)
 
-### Database setup
+---
 
-No manual migration step is required for the prototype.
+## Database Setup
+
+No manual migration step is required for this prototype.
 
 On backend startup:
 
-- SQLite database file `backend/skill_assessment.db` is created automatically
-- tables are created automatically
-- seed data is inserted automatically on first boot
+- SQLite database file is created automatically
+- Tables are created automatically
+- Seed data is inserted automatically on first boot
+
+---
 
 ## Environment Variables
 
-### Backend `.env`
+Use `.env.example` files as templates.
 
-Important keys:
+Do not commit real API keys or private credentials.
 
-- `DATABASE_URL`
-- `ENABLE_OPENAI`
-- `OPENAI_API_KEY`
-- `OPENAI_MODEL`
-- `MAX_ASSESSMENT_SKILLS`
-- `QUESTIONS_PER_SKILL`
+### Backend Environment Variables
 
-Default local `.env` is already included and runs without an API key.
+```text
+DATABASE_URL=
+ENABLE_OPENAI=
+OPENAI_API_KEY=
+OPENAI_MODEL=
+MAX_ASSESSMENT_SKILLS=
+QUESTIONS_PER_SKILL=
+```
 
-### Frontend `.env`
+The app works without OpenAI credentials when `ENABLE_OPENAI` is disabled.
 
-- `VITE_API_BASE_URL`
+### Frontend Environment Variables
 
-Default local `.env` is already included and points to `http://localhost:8000/api`.
+```text
+VITE_API_BASE_URL=http://localhost:8000/api
+```
+
+---
 
 ## API Summary
 
-### Core endpoints
+### Core Endpoints
 
-- `GET /api/health`
-- `GET /api/catalog`
-- `GET /api/sessions`
-- `GET /api/sessions/{session_id}`
-- `GET /api/sessions/{session_id}/report`
-- `POST /api/job-descriptions`
-- `POST /api/resumes`
-- `POST /api/sessions/analyze`
-- `POST /api/sessions/{session_id}/questions/generate`
-- `GET /api/sessions/{session_id}/questions`
-- `POST /api/sessions/{session_id}/answers`
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET | `/api/health` | Health check |
+| GET | `/api/catalog` | Demo catalog |
+| GET | `/api/sessions` | List sessions |
+| GET | `/api/sessions/{session_id}` | Get session details |
+| GET | `/api/sessions/{session_id}/report` | Get final report |
+| POST | `/api/job-descriptions` | Upload / submit job description |
+| POST | `/api/resumes` | Upload / submit resume |
+| POST | `/api/sessions/analyze` | Analyze JD and resume |
+| POST | `/api/sessions/{session_id}/questions/generate` | Generate assessment questions |
+| GET | `/api/sessions/{session_id}/questions` | Get assessment questions |
+| POST | `/api/sessions/{session_id}/answers` | Submit assessment answers |
 
-### API docs
-
-Use FastAPI Swagger UI:
-
-- [http://localhost:8000/docs](http://localhost:8000/docs)
-
-## Scoring Model
-
-### Resume Match Score
-
-- Derived from detected resume evidence for required JD skills
-- Weighted by skill importance extracted from the job description
-
-### Assessment Score
-
-- Derived from the candidate's answer quality
-- Rewards:
-  - technical depth
-  - implementation detail
-  - measurable outcomes
-  - clear structure
-
-### Final Skill Score
+### Swagger API Docs
 
 ```text
-Final Skill Score = 40% Resume Match + 60% Assessment Score
+http://localhost:8000/docs
 ```
 
-### Gap Priority
-
-Gap priority increases when:
-
-- the skill is highly important in the JD
-- the final skill score is low
-
-See [scoring_logic.md](./scoring_logic.md) for the full breakdown.
+---
 
 ## Sample Inputs
 
-- [sample_job_description.txt](./sample_job_description.txt)
-- [sample_resume.txt](./sample_resume.txt)
+- [`sample_job_description.txt`](./sample_job_description.txt)
+- [`sample_resume.txt`](./sample_resume.txt)
+
+---
 
 ## Sample Output Shape
 
-Final report includes:
+The final report includes:
 
 - Skill match percentage
 - Assessment score
 - Final readiness score
 - Skill-by-skill proficiency
-- Matching and missing skills
+- Matching skills
+- Missing skills
 - Priority gaps
-- Personalised learning plan
+- Personalized learning plan
 - Resource links
 - Estimated time to improve
+- Exportable PDF report
 
-## Notes
+---
 
-- The app works fully without OpenAI credentials.
-- The OpenAI integration is optional and isolated behind a replaceable service layer.
-- PDF export is handled client-side from the final report page for demo convenience.
-- The UI is intentionally styled for a hackathon demo rather than enterprise admin defaults.
+## Privacy Note
+
+Do not commit real resumes, private job descriptions, API keys, or confidential candidate data to GitHub.
+
+This project is intended for learning, demonstration, and portfolio purposes. Use sample or anonymized data when testing and presenting the project publicly.
+
+---
+
+## Limitations
+
+- Current skill extraction is designed for prototype/demo use
+- Offline mock LLM provides deterministic demo behavior, not true generative reasoning
+- OpenAI integration is optional and depends on API key setup
+- Resume parsing quality depends on input document formatting
+- Scoring logic is explainable but not a replacement for real hiring decisions
+- This is a hackathon-style prototype, not a production HR system
+
+---
+
+## Future Improvements
+
+- Add semantic embeddings for stronger resume-job matching
+- Add vector search for skill and resource recommendations
+- Add role-specific benchmark question banks
+- Add admin dashboard for recruiters
+- Add candidate progress tracking over time
+- Add Docker support for reproducible setup
+- Add authentication and user accounts
+- Add richer analytics for skill readiness trends
+- Add deployment setup for cloud hosting
+
+---
+
+## Project Status
+
+Completed working full-stack AI skill assessment prototype with FastAPI backend, React frontend, resume/JD parsing, skill gap analysis, conversational assessment, explainable scoring, personalized learning plan generation, seeded demo sessions, and PDF report export.
+
+---
+
+## Author
+
+**Harshith**  
