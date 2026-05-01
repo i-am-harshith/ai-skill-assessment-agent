@@ -9,7 +9,7 @@
 
 A full-stack AI skill assessment platform that compares a job description against a candidate resume, identifies skill gaps, generates assessment questions, scores candidate proficiency, and creates a personalized learning plan.
 
-This project is designed as an **AI/ML portfolio project** demonstrating resume analysis, skill extraction, explainable scoring, assessment generation, and full-stack AI application development using **FastAPI, React, TypeScript, SQLite, and an offline-first AI workflow**.
+This project is designed as an **AI Portfolio project** demonstrating resume analysis, skill extraction, explainable scoring, assessment generation, and full-stack AI application development using **FastAPI, React, TypeScript, SQLite, and an offline-first AI workflow**.
 
 ---
 
@@ -34,7 +34,6 @@ The **AI-Powered Skill Assessment & Personalized Learning Plan Agent** is an off
 
 The application allows users to upload or paste a job description and resume, analyzes skill alignment, generates a conversational assessment, evaluates answers, and produces a final readiness report.
 
-The app works without OpenAI credentials by default using a mock LLM service. Optional OpenAI integration is isolated behind a replaceable service layer.
 
 ---
 
@@ -124,7 +123,6 @@ Using Python 3.11 is recommended for smooth backend setup and dependency compati
 - Added seed data for demo-ready sessions
 - Added PDF export support from the frontend
 - Structured the project with backend, frontend, documentation, scoring logic, and architecture files
-- Prepared the project for GitHub portfolio presentation
 
 ---
 
@@ -194,42 +192,41 @@ flowchart LR
 
 ### Job Description Workflow
 
-![Job Description Workflow](docs/images/job-description-side-by-side.png)
+<p align="center">
+  <img src="docs/images/job-description-side-by-side.png" alt="Job Description Workflow" width="900">
+</p>
 
-> Add more screenshots inside `docs/images/` and update this section as needed.
+---
 
-Recommended screenshot files:
+### Resume Upload Workflow
 
-```text
-docs/images/home.png
-docs/images/job-description.png
-docs/images/resume-upload.png
-docs/images/skill-gap-analysis.png
-docs/images/assessment.png
-docs/images/final-report.png
-```
+<p align="center">
+  <img src="docs/images/resume-upload-side-by-side.png" alt="Resume Upload Workflow" width="900">
+</p>
 
-Recommended README format after adding more screenshots:
+---
 
-```markdown
-### Home Page
-![Home Page](docs/images/home.png)
+### Gap Analysis Page
 
-### Job Description Input
-![Job Description Input](docs/images/job-description.png)
+<p align="center">
+  <img src="docs/images/gap-analysis-complete-page.png" alt="Gap Analysis Page" width="900">
+</p>
 
-### Resume Upload
-![Resume Upload](docs/images/resume-upload.png)
+---
 
-### Skill Gap Analysis
-![Skill Gap Analysis](docs/images/skill-gap-analysis.png)
+### Conversational Assessment Page
 
-### Conversational Assessment
-![Assessment](docs/images/assessment.png)
+<p align="center">
+  <img src="docs/images/sample-assessment.png" alt="Conversational Assessment Page" width="900">
+</p>
 
-### Final Report
-![Final Report](docs/images/final-report.png)
-```
+---
+
+### Final Assessment Report
+
+<p align="center">
+  <img src="docs/images/final-assessment-report.png" alt="Final Assessment Report" width="900">
+</p>
 
 ---
 
@@ -285,6 +282,11 @@ ai-skill-assessment-agent/
 │
 ├── docs/
 │   └── images/
+│       ├── job-description-side-by-side.png
+│       ├── resume-upload-side-by-side.png
+│       ├── gap-analysis-complete-page.png
+│       ├── sample-assessment.png
+│       └── final-assessment-report.png
 │
 ├── architecture.md
 ├── scoring_logic.md
@@ -357,35 +359,6 @@ http://localhost:5173
 
 ---
 
-## Windows Quick Start
-
-If sharing this project with a Windows user:
-
-1. Zip the full project folder
-2. Ask them to extract it anywhere, such as Desktop
-3. Ask them to install:
-   - Python `3.11+`
-   - Node.js `LTS`
-4. Run:
-
-```bat
-start_demo_windows.bat
-```
-
-The Windows launcher:
-
-- Creates the backend virtual environment if needed
-- Installs backend dependencies
-- Installs frontend dependencies if needed
-- Starts backend and frontend in separate windows
-- Opens the browser automatically
-
-Windows launcher file:
-
-[`start_demo_windows.bat`](./start_demo_windows.bat)
-
----
-
 ## Database Setup
 
 No manual migration step is required for this prototype.
@@ -414,8 +387,6 @@ OPENAI_MODEL=
 MAX_ASSESSMENT_SKILLS=
 QUESTIONS_PER_SKILL=
 ```
-
-The app works without OpenAI credentials when `ENABLE_OPENAI` is disabled.
 
 ### Frontend Environment Variables
 
@@ -517,4 +488,5 @@ Completed working full-stack AI skill assessment prototype with FastAPI backend,
 
 ## Author
 
-**Harshith**  
+**Harshith Kumar**  
+
